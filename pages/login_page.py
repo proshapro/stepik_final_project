@@ -22,4 +22,3 @@ class LoginPage(BasePage):
         self.browser.find_element(*LoginPageLocators.REGISTER_FORM_PASSWORD_INPUT).send_keys(password)
         self.browser.find_element(*LoginPageLocators.REGISTER_FORM_CONFIRM_PASSWORD).send_keys(password)
         self.browser.find_element(*LoginPageLocators.REGISTER_FORM_SUBMIT_BUTTON).click()
-

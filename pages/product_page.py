@@ -14,15 +14,15 @@ class ProductPage(BasePage):
         return self.browser.find_element(*ProductPageLocators.PRODUCT_PRICE).text
 
     def should_be_correct_product_name_in_success_message(self):
-        product_name_in_alert = self.browser.find_element(*ProductPageLocators.PRODUCT_NAME_IN_SUCCESS_MESSAGE).text
-        assert self.product_name() == product_name_in_alert, f"Expected {self.product_name()} in success message, " \
-                                                             f"received {product_name_in_alert} instead "
+        product_name_in_message = self.browser.find_element(*ProductPageLocators.PRODUCT_NAME_IN_SUCCESS_MESSAGE).text
+        assert self.product_name() == product_name_in_message, f"Expected {self.product_name()} in success message, " \
+                                                               f"received {product_name_in_message} instead "
 
     def should_be_correct_product_price_in_info_message(self):
-        product_price_in_alert = self.browser.find_element(*ProductPageLocators.PRICE_IN_INFO_MESSAGE).text
-        assert self.product_price() == product_price_in_alert, f"Price from info message({product_price_in_alert}) " \
-                                                               f"does not match the price of the product added to the" \
-                                                               f" basket({self.product_price()}) "
+        product_price_in_message = self.browser.find_element(*ProductPageLocators.PRICE_IN_INFO_MESSAGE).text
+        assert self.product_price() == product_price_in_message, f"Price from info message({product_price_in_message}) " \
+                                                                 f"does not match the price of the product added to the" \
+                                                                 f" basket({self.product_price()}) "
 
     def should_not_be_success_message(self):
         assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE), \
